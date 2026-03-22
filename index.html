@@ -1,98 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UI Navigator Pro AI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #eef4ff, #f7f9fc);
-      margin: 0;
-      padding: 20px;
       color: #1f2a37;
+      line-height: 1.6;
     }
+
     .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
+      max-width: 920px;
+      margin: 0 auto;
       padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    h1 {
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2, h3 {
       margin-top: 0;
+      color: #1b2430;
     }
-    .section {
-      margin-bottom: 20px;
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 14px;
     }
-    code {
-      background: #f4f4f4;
-      padding: 8px;
-      display: block;
-      border-radius: 8px;
-      overflow-x: auto;
+
+    h2 {
+      font-size: 32px;
+      margin-top: 34px;
+      margin-bottom: 12px;
     }
+
+    h3 {
+      font-size: 22px;
+      margin-top: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 14px 22px;
+      font-size: 18px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .badges {
+      margin-bottom: 22px;
+    }
+
     .badge {
       display: inline-block;
-      padding: 6px 10px;
+      margin: 0 8px 10px 0;
+      padding: 10px 16px;
+      border-radius: 14px;
       background: #4f46e5;
-      color: white;
-      border-radius: 8px;
-      font-size: 12px;
-      margin-right: 5px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .hero-text {
+      font-size: 20px;
+      color: #334155;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-top: 10px;
+    }
+
+    .code-box {
+      background: #f3f4f6;
+      border-radius: 14px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 16px;
+      color: #111827;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .status-box {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .status-item {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .status-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: #eef2ff;
+      border-left: 5px solid #4f46e5;
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 14px;
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 18px;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    .demo-output {
+      margin-top: 14px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 17px;
+      min-height: 56px;
+    }
+
+    .footer {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 15px;
+      color: #64748b;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 16px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p, ul, .status-item, .highlight {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🚀 UI Navigator Pro AI</h1>
-    
-    <div class="section">
-      <span class="badge">Gemini AI</span>
-      <span class="badge">Desktop Automation</span>
-      <span class="badge">UI Understanding</span>
-    </div>
+    <div class="card">
+      <h1>🚀 UI Navigator Pro AI</h1>
 
-    <div class="section">
-      <h2>What it does</h2>
-      <p>
-        UI Navigator Pro AI captures user interfaces, analyzes them using Gemini AI,
-        and generates step-by-step navigation instructions.
+      <p class="hero-text">
+        An AI-powered assistant that understands user interfaces, analyzes screen content with Gemini AI,
+        and generates step-by-step navigation actions for desktop workflows.
       </p>
-    </div>
 
-    <div class="section">
-      <h2>How it works</h2>
-      <ul>
-        <li>Capture screen</li>
-        <li>Send to Gemini AI</li>
-        <li>Generate actions</li>
-        <li>Execute navigation</li>
-      </ul>
-    </div>
+      <div class="badges">
+        <span class="badge">Gemini AI</span>
+        <span class="badge">Desktop Automation</span>
+        <span class="badge">UI Understanding</span>
+        <span class="badge">Google Cloud Ready</span>
+      </div>
 
-    <div class="section">
-      <h2>Backend (Gemini Integration)</h2>
-      <code>
-from google import genai
+      <div class="section">
+        <h2>What it does</h2>
+        <p>
+          UI Navigator Pro AI captures user interfaces, analyzes them using Gemini AI,
+          and produces intelligent step-by-step navigation instructions for the user.
+        </p>
+        <p>
+          The goal is to help users interact with software more easily by combining
+          visual understanding, action planning, and automation support.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>How it works</h2>
+        <ul>
+          <li>Capture the current screen or interface</li>
+          <li>Send the UI context to the backend</li>
+          <li>Analyze the interface using Gemini AI</li>
+          <li>Generate structured navigation actions</li>
+          <li>Return guidance for desktop execution</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Backend (Gemini Integration)</h2>
+        <p>
+          The backend is designed to process UI data and call Gemini AI for intelligent interpretation and action generation.
+        </p>
+        <div class="code-box">from google import genai
+
 client = genai.Client(api_key="YOUR_API_KEY")
-      </code>
-    </div>
 
-    <div class="section">
-      <h2>Google Cloud Deployment</h2>
-      <p>
-        Deployment to Google Cloud is currently in progress.
-        Proof of deployment and full demo video will be added soon.
-      </p>
-    </div>
+response = client.models.generate_content(
+    model="gemini-2.0-flash",
+    contents="Analyze this interface and suggest the next user action."
+)</div>
+      </div>
 
-    <div class="section">
-      <h2>Status</h2>
-      <p>🔄 Demo video: Coming soon</p>
-      <p>☁️ GCP deployment: In progress</p>
+      <div class="section">
+        <h2>☁️ Google Cloud Integration</h2>
+        <p>
+          This project is structured for Google Cloud deployment. The backend is containerized with Docker
+          and prepared for cloud hosting on Google Cloud Run.
+        </p>
+
+        <ul>
+          <li>✅ Containerized backend using Docker</li>
+          <li>✅ API service architecture ready for deployment</li>
+          <li>✅ Gemini-based cloud processing workflow</li>
+          <li>🔄 Google Cloud Run deployment in progress</li>
+        </ul>
+
+        <h3>Planned Cloud Architecture</h3>
+        <ul>
+          <li>Desktop Client → Cloud API</li>
+          <li>Cloud API → Gemini AI analysis</li>
+          <li>Gemini AI response → Action generation</li>
+          <li>Generated instructions → User guidance / execution</li>
+        </ul>
+
+        <div class="highlight">
+          Target platform: <strong>Google Cloud Run</strong><br />
+          AI engine: <strong>Gemini API</strong>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Interactive Demo Simulation</h2>
+        <p>
+          This simple simulation shows the kind of structured navigation output the system is designed to generate.
+        </p>
+
+        <button class="button" onclick="runDemo()">Run AI Demo</button>
+
+        <div class="demo-output" id="demoOutput">
+          Click the button to simulate an AI-generated UI navigation response.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Project Status</h2>
+        <div class="status-box">
+          <div class="status-item">✅ Source code available on GitHub</div>
+          <div class="status-item">🔄 Full demo video: Coming soon</div>
+          <div class="status-item">🔄 Google Cloud deployment proof: In progress</div>
+          <div class="status-item">✅ Gemini integration included in backend architecture</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Repository</h2>
+        <p>
+          Full source code is available here:
+        </p>
+        <a class="button" href="https://github.com/InfoSchoolUz/ui-navigator-pro/" target="_blank">
+          View GitHub Repository
+        </a>
+      </div>
+
+      <div class="footer">
+        UI Navigator Pro AI — Project overview page for demo, architecture, and deployment readiness.
+      </div>
     </div>
   </div>
+
+  <script>
+    function runDemo() {
+      const output = document.getElementById("demoOutput");
+      output.innerHTML =
+        "<strong>AI Result:</strong><br>" +
+        "1. Click the 'Login' button.<br>" +
+        "2. Enter username and password.<br>" +
+        "3. Press 'Submit'.<br>" +
+        "4. Wait for the dashboard to load.<br>" +
+        "5. Open the settings menu from the top-right corner.";
+    }
+  </script>
 </body>
 </html>
